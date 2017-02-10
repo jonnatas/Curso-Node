@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/jonnatas/Curso-Node/issues"
   },
-  "homepage": "https://github.com/jonnatas/Curso-Node#readme"
+  "homepage": "https://github.com/jonnatas/Curso-Node#readme",
+  "dependencies": {
+    "ejs": "^2.5.5",
+    "express": "^4.14.1"
+  }
 }
