@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/jonnatas/Curso-Node#readme",
   "dependencies": {
+    "consign": "^0.1.2",
     "ejs": "^2.5.5",
     "express": "^4.14.1"
   }
