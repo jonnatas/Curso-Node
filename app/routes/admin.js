@@ -1,11 +1,20 @@
-module.exports = function(app){
+module.exports = function(application){
 	
-	app.get('/form_add_noticia', function(request, response){
-		response.render("admin/form_add_noticia")
+	application.get('/form_add_noticia', function(req, res){
+		res.render("admin/form_add_noticia")
 	});
 
-	app.post('/noticias/salvar', function(request, response){
-		var noticias = request.body;
-		response.send(noticias)
+	application.post('/noticias/salvar', function(req, res){
+		//res.send("Chegou napágina");
+		var noticia = req.body;
+/*		res.send(noticia);*/
+
+		var connection = application.config.dbConnection();
+		var NoticiasDAO = new application.app.models.NoticiasDAO(connection);
+
+		NoticiasDAO.salvarNoticia(noticia, function(error, result){
+			res.redirect('/noticias');
+		});
+		
 	});
 }

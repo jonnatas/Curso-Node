@@ -1,12 +1,14 @@
 var consign = require('consign');
 var express = require('express');
 var app = express();
-var bodyParser = require("body-parser");
+
+var bodyParser = require('body-parser');
 
 app.set('view engine', 'ejs');
 app.set('views', './app/views');
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: true})); 
+
 
 consign()
 	.include('./app/routes')
